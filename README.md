@@ -1,7 +1,7 @@
 # CS50
 This contains the programs I have written for the CS50 course offered by Harvard. 
 
-Crypto - Implimentations of Caesar and Vigenere Ciphers
+<b>Crypto</b> - Implimentations of Caesar and Vigenere Ciphers
 
 Scramble - Scramble is a game (currently popular on smart phones) that challenges letters to find as many words as possible in a 4x4 grid of letters before a timer expires. Each pair of letters in a word can be adjacent horizontally, vertically or diagonally. 
 
