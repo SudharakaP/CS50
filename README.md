@@ -1,5 +1,5 @@
 # CS50
-This contains the programs I have written for the CS50 course offered by Harvard. 
+This contains the programs I have written for the CS50 course offered by the University of Harvard (http://cs50.tv/2012/fall/#about,quizzes). 
 
 <b>Crypto</b> - Implimentations of Caesar and Vigenere Ciphers
 
