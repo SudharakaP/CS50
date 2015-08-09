@@ -1,0 +1,48 @@
+Once upon a time, there were four little pigs who lived in a four-byte
+ASCII file.  The first little piggy was an H.  The second little piggy
+was a T. The third little piggy was an H.  And the fourth little
+piggy was a newline.
+
+Presently came along David A. Huffman, and made a tree out of the
+piggies' frequencies, per the figure below.
+
+           4
+       0 /   \
+        /     \
+       2       \ 1
+    0 /  \ 1    \
+     /    \      \
+    1      1      2
+   \n      T      H
+
+Along came along the wolf, and knocked at the door, and said:
+
+"Little pigs, little pigs, let me come in."
+
+To which one pig answered:
+
+"No, no, by the hair of my chiny chin chin."
+
+The wolf then answered to that:
+
+"Then I'll huff, and I'll puff, and I'll blow your tree down."
+
+Well, he huffed, and he puffed, and he huffed and he puffed, and he puffed and 
+huffed; but he could not get the tree down. When he found that he could not, 
+with all his huffing and puffing, blow the tree down, he asked:
+
+"Little pigs, little pigs, who made this unbreakable tree?"
+
+To which the pigs answered:
+
+"A nice man named Huffman at MIT"
+
+So the wolf went to Huffman next morning and asked,
+
+"Oh David, Oh David, how do I break a binary tree"
+
+"Find the root and do a huff puff and away" said Huffman.
+
+The wolf went to the piggie frequency tree, found the root, did a huff & puff,
+blew the tree down ate the four pigs.
+

@@ -1,0 +1,62 @@
+0.  BMP format supports a maximum of 4,294,967,296 (2^32) distinct colors (32-bits per pixel).
+    GIF format supports a maximum of 256 distinct colors (8-bits per pixel).
+    JPEG format supports a maximum of 16, 777, 216 (2^16) distinct colors (24-bits per pixel).
+    PNG format supports a maximum of 2^48 distinct colors (48-bits per pixel).
+
+1.  The GIF format.
+
+2.  Lossless compression algorithms reduce the file size preserving a perfect copy of the 
+    uncompressed image whereas lossy compression algorithms reduces the file size by allowing 
+    the image quality to decrease. 
+  
+3.  JPEG images are almost always lossy compressed. 
+        
+4.  The filename's first character is modified in order to signal the deletion of the file. 
+    Then the system moves the file's FAT clusters to the hard drive's list of free clusters. 
+     
+5.  Overwrite the hard disk using a sanitization tool. 
+
+6.  This is a header file which includes definitions of Fixed Width Integer Types.
+
+7.  The actual size of basic integer types are dependent upon the implimentation. 
+    That is, an 'int' in memory may be allocated 16 bits in one system and 32 bits
+    in another system. In certain programming situations integer size matters and
+    should be fixed to a particular number of bits. In these situations uint8_t, 
+    uint32_t, int32_t, and uint16_t are useful since they tell the complier 
+    exactly how many bits to allocate.
+
+8.  BYTE: 1 byte
+    DWORD: 4 bytes
+    LONG: 4 bytes
+    WORD: 2 bytes
+
+9.  The first byte represent B in ASCII (66 in decimal) and the second byte 
+    represents M in ASCII (77 in decimal).
+    
+10. bfSize: The size, in bytes, of the bitmap file.
+    biSize: The number of bytes required by the BITMAPINFOHEADER structure.
+    
+11. If biHeight is negative the bitmap is a top-down image. That is, its origin is 
+    the upper-left corner.
+    
+12. biBitCount
+
+13. If the file that we specify as the second arguement (argv[2]) cannot be written (for 
+    example if it's write protected) then fopen will return NULL.
+     
+14. Using fread functions we are reading the BITMAPINFOHEADER and BITMAPFILEHEADER of the 
+    FILE pointed by "inptr". The third arguement corresponds to the number of objects to be 
+    read and the second arguement corresponds to the size of one object. Since we have specified
+    the second arguement as the size of BITMAPINFOHEADER(or BITMAPFILEHEADER) we should put 1 
+    for the third arguement.  
+     
+15. padding is assigned the value 3.
+
+16. The fseek function can be used to move to a specific location in a file.
+
+17. SEEK_CUR is an arguement passed to the fseek function in order to specify the origin value
+    (position where the seek should begin).
+         
+18. To be exact it's Fozzie Bear (http://en.wikipedia.org/wiki/Fozzie_Bear). Here is the image
+    I obtained (after increasing the contrast): http://s18.postimage.org/p2zxumjdl/verdict_formatted.png
+    Here is an accurate image: http://s11.postimage.org/qbzpst9ur/Fozzy.png

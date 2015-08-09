@@ -1,0 +1,69 @@
+0.  This word refers to a lung disease caused by inhalation of silica dust.
+ 
+1.  It returns resource usage statistics for the first arguement that we pass. The 
+    first arguement can be RUSAGE_SELF, RUSAGE_CHILDREN or RUSAGE_THREAD. The resource
+    usage statistics are stored in the variable of type struct rusage which we have 
+    to point at in the second arguement.
+        
+2.  16
+
+3.  "before" and "after" are rusage structs and therefore each is about 72 
+    bytes in size. If we pass these structs by value the whole structs are copied
+    at each call to calculate. Hence time and memory(stack space) could be optimized 
+    by passing the arguements, "before" and "after" by reference.
+     
+4.  Starting from the beginning of the file each character is read using fgetc. Each 
+    character is checked to see if it is alphabatic (including apostrophes) or 
+    numerical. 
+    
+    If it is alphabatic or an apostrophe then that character is appended to an array of
+    characters(named "word" of length LENGTH + 1). If it is a numeric character then 
+    the rest of the characters in the string are ignored.  
+    
+    A counter named index is used to keep track of how many letters are
+    there in a word and when a space is found index is reset to zero to mark the
+    beginning of a new word. Similarly when a numeric character is found index is 
+    reset to zero after parsing through the rest of the characters in that string.
+    
+    After appending a new character to the word array it is checked to see if the
+    length of the word array exceeds LENGTH. If it does, the string is discarded since
+    it is too long to be a legitimate word. As usual index is reset to zero after 
+    parsing through the rest of the characters in that string.
+    
+    If a legitimate word is found(a string that comply with the conditions above) then
+    a null terminating character(\0) is placed at the word array to mark the end of 
+    that word. Then using the check function the word is checked to see if there's any
+    misspellings. If there are misspellings the word is printed to stdout. 
+    
+    There are two counters named "words" and "misspellings". "words" counter is updated
+    whenever a valid word is found and "misspellings" is updated whenever there is a 
+    spelling error in a word. The functions "getrusage" and "calculate" are used to 
+    calculate the executing time of the check function.  
+       
+5.  "fscanf" with %s as the format string will take a string from the file and store 
+    it in an array that we specify. However we don't have any idea about the length
+    of the longest string in the text file. Therefore if we had used "fscanf" instead 
+    of "fgetc" we won't be able to specify a size for the array that we use to store 
+    each word.  
+    
+6.  To make sure that "dictionary" and "word" that is passed into the functions are
+    not modified by the program. Those arguements should only be used as read only
+    material.
+    
+7.  I used a trie. Inside each of its nodes are two fields; a field of type bool
+    to specify the end of a word and an array of pointers (of type "struct node") to 
+    point to the next character of each word. 
+    
+8.  Total time taken for execution was about 0.43.
+    
+9.  I managed to improve the load function. In the beginning it's speed was about 0.22.
+    After eliminating a couple of unnessasary loops and replacing malloc by calloc the
+    speed improved to about 0.16.
+    
+10. Currently the program runs has an ovarall running time of about 0.38. I guess this
+    is pretty slow compared to the staffs solution which has an execution time of about 
+    0.22 in my computer. Although my load and check functions performs almost at the 
+    same speed as staffs counterparts, my unload function is a bit slow (about 0.2 
+    whereas the staffs unload function has 0.1 running time). I guess the main reason 
+    for this time lag may be due to the fact that I did not define my unload function
+    recursively.     
